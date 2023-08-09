@@ -1,0 +1,23 @@
+<%- include("partial/header") -%>
+
+<div>
+    <div class="box">
+        <h1>Home</h1>
+        <p><%= startingContent %></p>
+    </div>
+    
+    <% for(var i=0; i<newPost.length; i++){ %>
+    <div class="">
+        <h1><%= newPost[i].postTitle %></h1>
+        <p>
+            <%= newPost[i].postContent.substring(0,100) +"..." %>
+            <a href="/post/<%= newPost[i]._id %>">Read More</a>
+        </p>
+    </div>
+    <% } %>
+
+</div>
+
+<a class="compose" href="/compose">+</a>
+
+<%- include("partial/footer") -%>
